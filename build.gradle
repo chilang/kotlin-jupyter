@@ -1,7 +1,7 @@
 
 buildscript {
     ext.shadowJarVersion = "1.2.3"
-    ext.kotlinVersion = '1.2.21'
+    ext.kotlinVersion = '1.3.50'
     ext.keplinVersion = '1.0.1'
     repositories {
         jcenter()
@@ -60,9 +60,18 @@ dependencies {
 
     shadow "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     shadow "org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion"
+    shadow "org.jetbrains.kotlin:kotlin-script-util:$kotlinVersion"
+    shadow "org.jetbrains.kotlin:kotlin-scripting-jvm-host-embeddable:$kotlinVersion"
+    shadow "org.jetbrains.kotlin:kotlin-scripting-common:$kotlinVersion"
+    shadow "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$kotlinVersion"
     shadow project(":jupyter-lib")
 
     deploy "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    deploy "org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion"
+    deploy "org.jetbrains.kotlin:kotlin-script-util:$kotlinVersion"
+    deploy "org.jetbrains.kotlin:kotlin-scripting-jvm-host-embeddable:$kotlinVersion"
+    deploy "org.jetbrains.kotlin:kotlin-scripting-common:$kotlinVersion"
+    deploy "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:$kotlinVersion"
     deploy project(":jupyter-lib")
 }
 
